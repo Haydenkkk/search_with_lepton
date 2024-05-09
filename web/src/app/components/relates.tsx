@@ -2,7 +2,7 @@ import { PresetQuery } from "@/app/components/preset-query";
 import { Skeleton } from "@/app/components/skeleton";
 import { Wrapper } from "@/app/components/wrapper";
 import { Relate } from "@/app/interfaces/relate";
-import { MessageSquareQuote } from "lucide-react";
+// import { MessageSquareQuote } from "lucide-react";
 import React, { FC } from "react";
 
 export const Relates: FC<{ relates: Relate[] | null }> = ({ relates }) => {
@@ -10,7 +10,8 @@ export const Relates: FC<{ relates: Relate[] | null }> = ({ relates }) => {
     <Wrapper
       title={
         <>
-          <MessageSquareQuote></MessageSquareQuote> Related
+          {/* <MessageSquareQuote></MessageSquareQuote> */}
+          Related
         </>
       }
       content={
@@ -21,7 +22,7 @@ export const Relates: FC<{ relates: Relate[] | null }> = ({ relates }) => {
                 <PresetQuery key={question} query={question}></PresetQuery>
               ))
             ) : (
-              <div className="text-sm">No related questions.</div>
+              <div className="text-sm">没有相关的问题...</div>
             )
           ) : (
             <>
@@ -31,7 +32,6 @@ export const Relates: FC<{ relates: Relate[] | null }> = ({ relates }) => {
             </>
           )}
         </div>
-      }
-    ></Wrapper>
+      }></Wrapper>
   );
 };

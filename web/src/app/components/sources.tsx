@@ -13,8 +13,7 @@ const SourceItem: FC<{ source: Source; index: number }> = ({
   return (
     <div
       className="relative text-xs py-3 px-3 bg-zinc-100 hover:bg-zinc-200 rounded-lg flex flex-col gap-2"
-      key={id}
-    >
+      key={id}>
       <a href={url} target="_blank" className="absolute inset-0"></a>
       <div className="font-medium text-zinc-950 text-ellipsis overflow-hidden whitespace-nowrap break-words">
         {name}
@@ -42,7 +41,8 @@ export const Sources: FC<{ sources: Source[] }> = ({ sources }) => {
     <Wrapper
       title={
         <>
-          <BookText></BookText> Sources
+          {/* <BookText></BookText>  */}
+          Sources
         </>
       }
       content={
@@ -52,8 +52,7 @@ export const Sources: FC<{ sources: Source[] }> = ({ sources }) => {
               <SourceItem
                 key={item.id}
                 index={index}
-                source={item}
-              ></SourceItem>
+                source={item}></SourceItem>
             ))
           ) : (
             <>
@@ -64,7 +63,6 @@ export const Sources: FC<{ sources: Source[] }> = ({ sources }) => {
             </>
           )}
         </div>
-      }
-    ></Wrapper>
+      }></Wrapper>
   );
 };

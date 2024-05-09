@@ -1,10 +1,25 @@
 {
-  "plugins": ["unused-imports"],
-  "extends": [
-    "next/core-web-vitals",
-    "plugin:prettier/recommended"
-  ],
+  "plugins": ["prettier"],
+  // "extends": [
+  //   "next/core-web-vitals",
+  //   "plugin:prettier/recommended"
+    
+  // ],
+  "extends": ["plugin:prettier/recommended"],
   "rules": {
-    "unused-imports/no-unused-imports": "error"
-  }
+    "prettier/prettier": "error"
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+        "jsx": true,
+        "modules": true,
+        "experimentalObjectRestSpread": true
+    }
+}
+  // "rules": {
+  //   "unused-imports/no-unused-imports": "error"
+  // }
 }

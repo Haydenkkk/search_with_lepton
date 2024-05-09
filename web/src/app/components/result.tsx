@@ -22,7 +22,7 @@ export const Result: FC<{ query: string; rid: string }> = ({ query, rid }) => {
       setSources,
       setMarkdown,
       setRelates,
-      setError,
+      setError
     );
     return () => {
       controller.abort();

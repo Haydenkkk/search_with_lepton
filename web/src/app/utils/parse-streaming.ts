@@ -12,7 +12,7 @@ export const parseStreaming = async (
   onSources: (value: Source[]) => void,
   onMarkdown: (value: string) => void,
   onRelates: (value: Relate[]) => void,
-  onError?: (status: number) => void,
+  onError?: (status: number) => void
 ) => {
   const decoder = new TextDecoder();
   let uint8Array = new Uint8Array();
@@ -40,7 +40,7 @@ export const parseStreaming = async (
         .replace(/\[\[([cC])itation/g, "[citation")
         .replace(/[cC]itation:(\d+)]]/g, "citation:$1]")
         .replace(/\[\[([cC]itation:\d+)]](?!])/g, `[$1]`)
-        .replace(/\[[cC]itation:(\d+)]/g, "[citation]($1)"),
+        .replace(/\[[cC]itation:(\d+)]/g, "[citation]($1)")
     );
   };
   fetchStream(
@@ -73,6 +73,6 @@ export const parseStreaming = async (
       } catch (e) {
         onRelates([]);
       }
-    },
+    }
   );
 };

@@ -6,7 +6,7 @@ import {
 import { Skeleton } from "@/app/components/skeleton";
 import { Wrapper } from "@/app/components/wrapper";
 import { Source } from "@/app/interfaces/source";
-import { BookOpenText } from "lucide-react";
+// import { BookOpenText } from "lucide-react";
 import { FC } from "react";
 import Markdown from "react-markdown";
 
@@ -18,7 +18,8 @@ export const Answer: FC<{ markdown: string; sources: Source[] }> = ({
     <Wrapper
       title={
         <>
-          <BookOpenText></BookOpenText> Answer
+          {/* <BookOpenText></BookOpenText>  */}
+          Answer
         </>
       }
       content={
@@ -36,15 +37,13 @@ export const Answer: FC<{ markdown: string; sources: Source[] }> = ({
                         <PopoverTrigger asChild>
                           <span
                             title={source.name}
-                            className="inline-block cursor-pointer transform scale-[60%] no-underline font-medium bg-zinc-300 hover:bg-zinc-400 w-6 text-center h-6 rounded-full origin-top-left"
-                          >
+                            className="inline-block cursor-pointer transform scale-[60%] no-underline font-medium bg-zinc-300 hover:bg-zinc-400 w-6 text-center h-6 rounded-full origin-top-left">
                             {props.href}
                           </span>
                         </PopoverTrigger>
                         <PopoverContent
                           align={"start"}
-                          className="max-w-screen-md flex flex-col gap-2 bg-white shadow-transparent ring-zinc-50 ring-4 text-xs"
-                        >
+                          className="max-w-screen-md flex flex-col gap-2 bg-white shadow-transparent ring-zinc-50 ring-4 text-xs">
                           <div className="text-ellipsis overflow-hidden whitespace-nowrap font-medium">
                             {source.name}
                           </div>
@@ -72,8 +71,7 @@ export const Answer: FC<{ markdown: string; sources: Source[] }> = ({
                                 <a
                                   title={source.name}
                                   href={source.url}
-                                  target="_blank"
-                                >
+                                  target="_blank">
                                   {source.url}
                                 </a>
                               </div>
@@ -91,8 +89,7 @@ export const Answer: FC<{ markdown: string; sources: Source[] }> = ({
                     </span>
                   );
                 },
-              }}
-            >
+              }}>
               {markdown}
             </Markdown>
           </div>
@@ -105,7 +102,6 @@ export const Answer: FC<{ markdown: string; sources: Source[] }> = ({
             <Skeleton className="max-w-xl h-4 bg-zinc-200"></Skeleton>
           </div>
         )
-      }
-    ></Wrapper>
+      }></Wrapper>
   );
 };
